@@ -7,9 +7,16 @@ RUN npm install --prefix server --omit=dev
 
 FROM node:20-alpine AS client-build
 WORKDIR /app/client
+
+# Aumentar heap y reducir memoria del build
+ENV NODE_OPTIONS="--max-old-space-size=2048"
+ENV GENERATE_SOURCEMAP=false
+
 COPY client/package.json ./package.json
 COPY client/package-lock.json ./package-lock.json
-RUN npm install
+
+RUN npm ci
+
 COPY client ./
 RUN npm run build
 
