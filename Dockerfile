@@ -15,7 +15,7 @@ ENV GENERATE_SOURCEMAP=false
 COPY client/package.json ./package.json
 COPY client/package-lock.json ./package-lock.json
 
-RUN npm ci
+RUN npm install
 
 COPY client ./
 RUN npm run build
