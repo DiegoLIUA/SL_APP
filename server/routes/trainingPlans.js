@@ -3,7 +3,7 @@ const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const { authMiddleware, trainerMiddleware } = require('../middleware/auth');
 
-const db = new sqlite3.Database('./database/streetlifting.db');
+const db = new sqlite3.Database('/data/streetlifting.db');
 
 // Create training plan
 router.post('/', authMiddleware, (req, res) => {

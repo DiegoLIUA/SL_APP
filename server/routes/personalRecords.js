@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose();
 const { authMiddleware } = require('../middleware/auth');
 
 // Initialize database connection
-const db = new sqlite3.Database('./database/streetlifting.db');
+const db = new sqlite3.Database('/data/streetlifting.db');
 
 // 1RM Calculations using Streetlifting-specific formulas (like Calculator)
 

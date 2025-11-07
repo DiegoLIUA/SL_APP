@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const sqlite3 = require('sqlite3').verbose();
 
-const db = new sqlite3.Database('./database/streetlifting.db');
+const db = new sqlite3.Database('/data/streetlifting.db');
 
 // Register route
 router.post('/register', async (req, res) => {

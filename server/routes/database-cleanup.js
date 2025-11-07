@@ -3,7 +3,7 @@ const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const { authMiddleware } = require('../middleware/auth');
 
-const db = new sqlite3.Database('./database/streetlifting.db');
+const db = new sqlite3.Database('/data/streetlifting.db');
 
 // TEMPORARY ROUTE - Remove after cleanup
 router.post('/clean-duplicates', authMiddleware, (req, res) => {
